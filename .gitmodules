@@ -1,0 +1,3 @@
+[submodule "themes/konbanwa"]
+	path = themes/konbanwa
+	url = https://github.com/rdela/theme-konbanwa.git

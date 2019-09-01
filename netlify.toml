@@ -1,0 +1,20 @@
+# https://gohugo.io/hosting-and-deployment/hosting-on-netlify/
+# https://www.netlify.com/docs/continuous-deployment/#deploy-contexts
+# https://github.com/sourcethemes/academic-kickstart/commit/88d6924d34d00742a0e9fc7db6cfbaca1b877151
+
+[build]
+  command = "hugo --gc --minify -b $URL"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.57.2"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+  HUGO_VERSION = "0.57.2"
+
+[context.deploy-preview]
+  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
